@@ -25,6 +25,13 @@
 class Horde_Cli
 {
     /**
+     * The output pipe.
+     *
+     * @var resource
+     */
+    protected $_output;
+
+    /**
      * The newline string to use.
      *
      * @var string
@@ -72,8 +79,12 @@ class Horde_Cli
      *
      * Use init() if you also want to set environment variables that may be
      * missing in a CLI environment.
+     *
+     * @param array $opts  Configuration options:
+     *                     - 'pager': (boolean) Pipe output through a pager?
+     *                                @since 2.3.0
      */
-    public function __construct()
+    public function __construct(array $opts = array())
     {
         $this->_color = new Horde_Cli_Color();
         $console = $this->runningFromCLI();
@@ -90,6 +101,15 @@ class Horde_Cli
             $this->_space = '&nbsp;';
         }
         $this->_indent = str_repeat($this->_space, 4);
+
+        if (defined('STDOUT')) {
+            $this->_output = STDOUT;
+            if (!empty($opts['pager'])) {
+                $this->_detectPager();
+            }
+        } else {
+            $this->_output = fopen('php://output', 'w');
+        }
 
         // We really want to call this at the end of the script, not in the
         // destructor.
@@ -122,9 +142,9 @@ class Horde_Cli
     public function writeln($text = '', $pre = false)
     {
         if ($pre) {
-            echo $this->_newline . $text;
+            fwrite($this->_output, $this->_newline . $text);
         } else {
-            echo $text . $this->_newline;
+            fwrite($this->_output, $text . $this->_newline);
         }
     }
 
@@ -133,7 +153,7 @@ class Horde_Cli
      */
     public function clearScreen()
     {
-        echo $this->_clearscreen;
+        fwrite($this->_output, $this->_clearscreen);
     }
 
     /**
@@ -564,7 +584,7 @@ class Horde_Cli
             $command = '/usr/bin/env bash -c "read -s -p '
                 . escapeshellarg($prompt) . ' mypassword && echo \$mypassword"';
             $password = rtrim(shell_exec($command));
-            echo $this->_newline;
+            fwrite($this->_output, $this->_newline);
         }
 
         return $password;
@@ -590,13 +610,17 @@ class Horde_Cli
      * none. Also initialize a few variables in $_SERVER that aren't present
      * from the CLI.
      *
+     * @param array $opts  Configuration options:
+     *                     - 'pager': (boolean) Pipe output through a pager?
+     *                                @since 2.3.0
+     *
      * @return Horde_Cli  A Horde_Cli instance.
      */
-    public static function init()
+    public static function init(array $opts = array())
     {
         /* Run constructor now because it requires $_SERVER['SERVER_NAME'] to
          * be empty if called with a CGI SAPI. */
-        $cli = new static();
+        $cli = new static($opts);
 
         @set_time_limit(0);
         ob_implicit_flush(true);
@@ -674,5 +698,53 @@ class Horde_Cli
         if (!$this->_width) {
             $this->_width = 80;
         }
+    }
+
+    /**
+     * Detects available pagers (less, more) and creates pipes to output
+     * through them.
+     */
+    protected function _detectPager()
+    {
+        $paths = array_unique(array_merge(
+            explode(':', getenv('PATH')),
+            array(
+                '/usr/local/sbin',
+                '/usr/local/bin',
+                '/usr/sbin',
+                '/usr/bin',
+                '/sbin',
+                '/bin'
+            )
+        ));
+        $pager = null;
+        foreach (array('less', 'more') as $cmd) {
+            foreach ($paths as $path) {
+                if (is_executable($path . '/' . $cmd)) {
+                    $pager = $path . '/' . $cmd;
+                    break 2;
+                }
+            }
+        }
+        if (!$pager) {
+            return;
+        }
+        $help = shell_exec($pager . ' --help');
+        if (!$help) {
+            return;
+        }
+        foreach (array('--RAW-CONTROL-CHARS', '--raw-control-chars') as $opt) {
+            if (strpos($help, $opt)) {
+                $pager .= ' ' . $opt;
+                break;
+            }
+        }
+        if (strpos($help, '--no-init')) {
+            $pager .= ' --no-init';
+        }
+        if (strpos($help, '--quit-if-one-screen')) {
+            $pager .= ' --quit-if-one-screen';
+        }
+        $this->_output = popen($pager, 'w');
     }
 }

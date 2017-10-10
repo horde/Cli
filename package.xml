@@ -17,10 +17,10 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-06-22</date>
+ <date>2017-10-10</date>
  <version>
-  <release>2.2.5</release>
-  <api>2.2.0</api>
+  <release>2.3.0</release>
+  <api>2.3.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -28,7 +28,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* 
+* [jan] Add option to pass output through a pager.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -856,15 +856,15 @@ Add &apos;default&apos; parameter to Horde_CLI::prompt().
   </release>
   <release>
    <version>
-    <release>2.2.5</release>
-    <api>2.2.0</api></version>
+    <release>2.3.0</release>
+    <api>2.3.0</api></version>
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-06-22</date>
+   <date>2017-10-10</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
-* 
+* [jan] Add option to pass output through a pager.
    </notes>
   </release>
  </changelog>
