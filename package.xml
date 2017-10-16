@@ -17,7 +17,7 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-10-10</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.3.0</release>
   <api>2.3.0</api>
@@ -36,7 +36,6 @@
     <dir name="Horde">
      <dir name="Cli">
       <file name="colors.php" role="doc" />
-      <file name="COPYING" role="doc" />
       <file name="UPGRADING" role="doc" />
      </dir> <!-- /doc/Horde/Cli -->
     </dir> <!-- /doc/Horde -->
@@ -307,6 +306,7 @@
     </dir> <!-- /locale/zh_TW -->
     <file name="Horde_Cli.pot" role="data" />
    </dir> <!-- /locale -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -337,13 +337,12 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="Horde/Cli/colors.php" name="doc/Horde/Cli/colors.php" />
-   <install as="COPYING" name="doc/Horde/Cli/COPYING" />
+   <install as="colors.php" name="doc/Horde/Cli/colors.php" />
    <install as="UPGRADING" name="doc/Horde/Cli/UPGRADING" />
    <install as="Horde/Cli.php" name="lib/Horde/Cli.php" />
    <install as="Horde/Cli/Color.php" name="lib/Horde/Cli/Color.php" />
    <install as="Horde/Cli/Translation.php" name="lib/Horde/Cli/Translation.php" />
-   <install as="locale/Horde_Cli.pot" name="locale/Horde_Cli.pot" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="locale/ar/LC_MESSAGES/Horde_Cli.mo" name="locale/ar/LC_MESSAGES/Horde_Cli.mo" />
    <install as="locale/ar/LC_MESSAGES/Horde_Cli.po" name="locale/ar/LC_MESSAGES/Horde_Cli.po" />
    <install as="locale/bg/LC_MESSAGES/Horde_Cli.mo" name="locale/bg/LC_MESSAGES/Horde_Cli.mo" />
@@ -376,6 +375,7 @@
    <install as="locale/gl/LC_MESSAGES/Horde_Cli.po" name="locale/gl/LC_MESSAGES/Horde_Cli.po" />
    <install as="locale/he/LC_MESSAGES/Horde_Cli.mo" name="locale/he/LC_MESSAGES/Horde_Cli.mo" />
    <install as="locale/he/LC_MESSAGES/Horde_Cli.po" name="locale/he/LC_MESSAGES/Horde_Cli.po" />
+   <install as="locale/Horde_Cli.pot" name="locale/Horde_Cli.pot" />
    <install as="locale/hr/LC_MESSAGES/Horde_Cli.mo" name="locale/hr/LC_MESSAGES/Horde_Cli.mo" />
    <install as="locale/hr/LC_MESSAGES/Horde_Cli.po" name="locale/hr/LC_MESSAGES/Horde_Cli.po" />
    <install as="locale/hu/LC_MESSAGES/Horde_Cli.mo" name="locale/hu/LC_MESSAGES/Horde_Cli.mo" />
@@ -861,7 +861,7 @@ Add &apos;default&apos; parameter to Horde_CLI::prompt().
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-10</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Add option to pass output through a pager.
