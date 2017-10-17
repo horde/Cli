@@ -36,7 +36,7 @@
     <dir name="Horde">
      <dir name="Cli">
       <file name="colors.php" role="doc" />
-      <file name="UPGRADING" role="doc" />
+      <file name="UPGRADING.rst" role="doc" />
      </dir> <!-- /doc/Horde/Cli -->
     </dir> <!-- /doc/Horde -->
    </dir> <!-- /doc -->
@@ -338,7 +338,7 @@
  <phprelease>
   <filelist>
    <install as="colors.php" name="doc/Horde/Cli/colors.php" />
-   <install as="UPGRADING" name="doc/Horde/Cli/UPGRADING" />
+   <install as="UPGRADING.rst" name="doc/Horde/Cli/UPGRADING.rst" />
    <install as="Horde/Cli.php" name="lib/Horde/Cli.php" />
    <install as="Horde/Cli/Color.php" name="lib/Horde/Cli/Color.php" />
    <install as="Horde/Cli/Translation.php" name="lib/Horde/Cli/Translation.php" />
