@@ -1,0 +1,357 @@
+---
+2.3.0:
+  api: 2.3.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-10-17
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Add option to pass output through a pager.
+2.2.4:
+  api: 2.2.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-06-22
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Fix returning to normal font after text with light colors.
+2.2.3:
+  api: 2.2.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-05-30
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Fix fatal error screen for PHP 7 error objects.
+    [jan] Fix header() method to print, not return the header.
+2.2.2:
+  api: 2.2.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-05-04
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Really silence errors from tput and stty (Bug #14632).
+2.2.1:
+  api: 2.2.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-05-04
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Silence errors from tput and stty (Bug #14632).
+2.2.0:
+  api: 2.2.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-05-03
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Use rectangular background coloring for messages and errors.
+    [jan] Add Horde_Cli#block().
+    [jan] Use the system's newline character(s).
+    [jan] Fix color sequences for black and darkgray.
+    [jan] Mark PHP 7 as supported.
+    [jan] Wrap content matching the terminal width.
+    [jan] Add Horde_Cli#getWidth() to return the terminal width.
+    [jan] Add Horde_Cli_Color.
+2.1.0:
+  api: 2.1.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-03-20
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Add header() method to turn a string into an outlined header.
+    [jan] Add color() method to colorize output with any supported color.
+2.0.7:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2016-07-12
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Improve PHP 7.1 compatibility.
+2.0.6:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2015-01-08
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Support loading translations from Composer-installed package.
+    [jan] Improve PSR-2 compatibility.
+2.0.5:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2014-04-03
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Fix printing of structured fatal error details.
+2.0.4:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2013-07-16
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Print additional error details in fatal errors if available.
+2.0.3:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2013-01-29
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update French translation (Paul De Vlieger <paul.de_vlieger@moniut.univ-bpclermont.fr>).
+2.0.2:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2013-01-09
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update Basque translation (Ibon Igartua <ibon.igartua@ehu.es>).
+2.0.1:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2012-11-06
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update Dutch translation (Arjen de Korte <build+horde@de-korte.org>).
+2.0.0:
+  api: 2.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2012-10-30
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First stable release for Horde 5.
+2.0.0RC1:
+  api: 2.0.0
+  state:
+    release: beta
+    api: alpha
+  date: 2012-10-26
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update Japanese translation.
+2.0.0beta2:
+  api: 2.0.0
+  state:
+    release: beta
+    api: alpha
+  date: 2012-08-29
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Include file and line when calling Horde_Cli#fatal() with an exception.
+2.0.0beta1:
+  api: 2.0.0
+  state:
+    release: beta
+    api: alpha
+  date: 2012-07-19
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First beta release for Horde 5.
+2.0.0alpha1:
+  api: 2.0.0
+  state:
+    release: alpha
+    api: alpha
+  date: 2012-07-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First alpha release for Horde 5.
+    [jan] Use late static binding in init() for easier extension of Horde_Cli.
+1.0.4:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2011-11-22
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Don't overwrite $_SERVER superglobals unconditionally, to allow setting them through environment variables (Bug #10758).
+1.0.3:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2011-07-27
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update Latvian translation.
+    [jan] Fall back to standard prompt if password prompt not possible.
+1.0.2:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2011-07-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Update Lithuanian translation.
+    [jan] Update Brazilian Portuguese translation.
+1.0.1:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2011-06-01
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    [jan] Updated Slovak translation.
+    [jan] Updated Spanish translation.
+1.0.0:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2011-04-06
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First stable release for Horde 4.
+1.0.0RC2:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-29
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Second release candidate for Horde 4.
+1.0.0RC1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-22
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First release candidate for Horde 4.
+1.0.0beta1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-16
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First beta release for Horde 4.
+1.0.0alpha1:
+  api: 1.0.0
+  state:
+    release: alpha
+    api: alpha
+  date: 2011-03-08
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Initial Horde 4 package.
+    Horde_CLI:: -> Horde_Cli::
+0.1.0:
+  api: 0.1.0
+  state:
+    release: alpha
+    api: alpha
+  date: 2006-12-31
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Add 'default' parameter to Horde_CLI::prompt().
+0.0.2:
+  api: 0.0.2
+  state:
+    release: alpha
+    api: alpha
+  date: 2006-05-08
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Converted to package.xml 2.0 for pear.horde.org
+0.0.1:
+  api: 0.0.1
+  state:
+    release: alpha
+    api: alpha
+  date: 2003-07-04
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Initial release as a PEAR package
