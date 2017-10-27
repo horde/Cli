@@ -16,8 +16,8 @@
             "role": "lead"
         }
     ],
-    "version": "2.2.4",
-    "time": "2017-06-22",
+    "version": "2.3.0",
+    "time": "2017-10-10",
     "repositories": [
         {
             "type": "pear",
@@ -26,8 +26,8 @@
     ],
     "require": {
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Support": "^2@stable",
-        "pear-pear.horde.org/Horde_Translation": "^2.2@stable"
+        "pear-pear.horde.org/Horde_Support": "^2",
+        "pear-pear.horde.org/Horde_Translation": "^2.2"
     },
     "replace": {
         "pear-pear.horde.org/Horde_Cli": "2.*",
