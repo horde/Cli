@@ -6,3 +6,32 @@ description: |
   Horde_Cli:: API for basic command-line functionality/checks
 list: dev
 type: library
+homepage: https://www.horde.org/libraries/Horde_Cli
+authors:
+  -
+    name: Jan Schneider
+    user: jan
+    email: jan@horde.org
+    active: true
+    role: lead
+  -
+    name: Chuck Hagenbuch
+    user: chuck
+    email: chuck@horde.org
+    active: false
+    role: lead
+version:
+  release: 2.3.0
+  api: 2.3.0
+state:
+  release: stable
+  api: stable
+license:
+  identifier: LGPL-2.1
+  uri: http://www.horde.org/licenses/lgpl21
+dependencies:
+  required:
+    php: ^5.3 || ^7
+    pear:
+      pear.horde.org/Horde_Support: ^2
+      pear.horde.org/Horde_Translation: ^2.2
