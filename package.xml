@@ -17,7 +17,7 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-27</date>
  <version>
   <release>2.3.0</release>
   <api>2.3.0</api>
@@ -35,6 +35,7 @@
    <dir name="doc">
     <dir name="Horde">
      <dir name="Cli">
+      <file name="CHANGES" role="doc" />
       <file name="colors.php" role="doc" />
       <file name="UPGRADING.rst" role="doc" />
      </dir> <!-- /doc/Horde/Cli -->
@@ -337,6 +338,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Cli/CHANGES" />
    <install as="colors.php" name="doc/Horde/Cli/colors.php" />
    <install as="UPGRADING.rst" name="doc/Horde/Cli/UPGRADING.rst" />
    <install as="Horde/Cli.php" name="lib/Horde/Cli.php" />
@@ -861,7 +863,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-27</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Add option to pass output through a pager.
