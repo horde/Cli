@@ -1,0 +1,232 @@
+----------
+v2.3.0-git
+----------
+
+[jan] Add option to pass output through a pager.
+
+
+------
+v2.2.4
+------
+
+[jan] Fix returning to normal font after text with light colors.
+
+
+------
+v2.2.3
+------
+
+[jan] Fix fatal error screen for PHP 7 error objects.
+[jan] Fix header() method to print, not return the header.
+
+
+------
+v2.2.2
+------
+
+[jan] Really silence errors from tput and stty (Bug #14632).
+
+
+------
+v2.2.1
+------
+
+[jan] Silence errors from tput and stty (Bug #14632).
+
+
+------
+v2.2.0
+------
+
+[jan] Use rectangular background coloring for messages and errors.
+[jan] Add Horde_Cli#block().
+[jan] Use the system's newline character(s).
+[jan] Fix color sequences for black and darkgray.
+[jan] Mark PHP 7 as supported.
+[jan] Wrap content matching the terminal width.
+[jan] Add Horde_Cli#getWidth() to return the terminal width.
+[jan] Add Horde_Cli_Color.
+
+
+------
+v2.1.0
+------
+
+[jan] Add header() method to turn a string into an outlined header.
+[jan] Add color() method to colorize output with any supported color.
+
+
+------
+v2.0.7
+------
+
+[jan] Improve PHP 7.1 compatibility.
+
+
+------
+v2.0.6
+------
+
+[jan] Support loading translations from Composer-installed package.
+[jan] Improve PSR-2 compatibility.
+
+
+------
+v2.0.5
+------
+
+[jan] Fix printing of structured fatal error details.
+
+
+------
+v2.0.4
+------
+
+[jan] Print additional error details in fatal errors if available.
+
+
+------
+v2.0.3
+------
+
+[jan] Update French translation (Paul De Vlieger
+      <paul.de_vlieger@moniut.univ-bpclermont.fr>).
+
+
+------
+v2.0.2
+------
+
+[jan] Update Basque translation (Ibon Igartua <ibon.igartua@ehu.es>).
+
+
+------
+v2.0.1
+------
+
+[jan] Update Dutch translation (Arjen de Korte <build+horde@de-korte.org>).
+
+
+------
+v2.0.0
+------
+
+First stable release for Horde 5.
+
+
+---------
+v2.0.0RC1
+---------
+
+[jan] Update Japanese translation.
+
+
+-----------
+v2.0.0beta2
+-----------
+
+[jan] Include file and line when calling Horde_Cli#fatal() with an exception.
+
+
+-----------
+v2.0.0beta1
+-----------
+
+First beta release for Horde 5.
+
+
+------------
+v2.0.0alpha1
+------------
+
+First alpha release for Horde 5.
+[jan] Use late static binding in init() for easier extension of Horde_Cli.
+
+
+------
+v1.0.4
+------
+
+[jan] Don't overwrite $_SERVER superglobals unconditionally, to allow setting
+      them through environment variables (Bug #10758).
+
+
+------
+v1.0.3
+------
+
+[jan] Update Latvian translation.
+[jan] Fall back to standard prompt if password prompt not possible.
+
+
+------
+v1.0.2
+------
+
+[jan] Update Lithuanian translation.
+[jan] Update Brazilian Portuguese translation.
+
+
+------
+v1.0.1
+------
+
+[jan] Updated Slovak translation.
+[jan] Updated Spanish translation.
+
+
+------
+v1.0.0
+------
+
+First stable release for Horde 4.
+
+
+---------
+v1.0.0RC2
+---------
+
+Second release candidate for Horde 4.
+
+
+---------
+v1.0.0RC1
+---------
+
+First release candidate for Horde 4.
+
+
+-----------
+v1.0.0beta1
+-----------
+
+First beta release for Horde 4.
+
+
+------------
+v1.0.0alpha1
+------------
+
+Initial Horde 4 package.
+Horde_CLI:: -> Horde_Cli::
+
+
+------
+v0.1.0
+------
+
+Add 'default' parameter to Horde_CLI::prompt().
+
+
+------
+v0.0.2
+------
+
+Converted to package.xml 2.0 for pear.horde.org
+
+
+------
+v0.0.1
+------
+
+Initial release as a PEAR package
