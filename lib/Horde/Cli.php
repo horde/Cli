@@ -81,6 +81,8 @@ class Horde_Cli
      * missing in a CLI environment.
      *
      * @param array $opts  Configuration options:
+     *                     - 'output': (resource, optional) Open pipe to write
+     *                                 the output to.
      *                     - 'pager': (boolean) Pipe output through a pager?
      *                                @since 2.3.0
      */
@@ -102,7 +104,9 @@ class Horde_Cli
         }
         $this->_indent = str_repeat($this->_space, 4);
 
-        if (defined('STDOUT')) {
+        if (isset($opts['output'])) {
+            $this->_output = $opts['output'];
+        } elseif (defined('STDOUT')) {
             $this->_output = STDOUT;
             if (!empty($opts['pager'])) {
                 $this->_detectPager();
