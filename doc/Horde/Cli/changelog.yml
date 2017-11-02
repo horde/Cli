@@ -9,6 +9,7 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: |
+    [jan] Add option to set a custom output handler.
     [jan] Add option to pass output through a pager.
 2.2.4:
   api: 2.2.0
