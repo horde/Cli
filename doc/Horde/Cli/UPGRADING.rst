@@ -11,14 +11,15 @@
 This lists the API changes between releases of the package.
 
 
-Upgrading to 2.1.0
+Upgrading to 2.3.0
 ==================
 
   - Horde_Cli
 
-    - color(), header()
+    - Constructor
 
-      These methods have been added.
+      An $opts parameter has been added to pass optional 'output' and 'pager'
+      options.
 
 
 Upgrading to 2.2.0
@@ -38,3 +39,13 @@ Upgrading to 2.2.0
 
       These methods have been deprecated. Use Horde_Cli_Color or
       Horde_Cli#color() instead.
+
+
+Upgrading to 2.1.0
+==================
+
+  - Horde_Cli
+
+    - color(), header()
+
+      These methods have been added.
