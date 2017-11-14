@@ -1,8 +1,8 @@
 {
     "name": "horde/cli",
-    "description": "Horde Command Line Interface API",
+    "description": "Command line interface library",
     "type": "library",
-    "homepage": "https://pear.horde.org",
+    "homepage": "https://www.horde.org/libraries/Horde_Cli",
     "license": "LGPL-2.1",
     "authors": [
         {
@@ -17,7 +17,7 @@
         }
     ],
     "version": "2.3.0",
-    "time": "2017-10-10",
+    "time": "2017-11-14",
     "repositories": [
         {
             "type": "pear",

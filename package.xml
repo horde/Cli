@@ -3,8 +3,9 @@
  <name>Horde_Cli</name>
  <channel>pear.horde.org</channel>
  <extends>Horde_CLI</extends>
- <summary>Horde Command Line Interface API</summary>
- <description>Horde_Cli:: API for basic command-line functionality/checks</description>
+ <summary>Command line interface library</summary>
+ <description>Horde_Cli:: API for basic command-line functionality/checks
+</description>
  <lead>
   <name>Jan Schneider</name>
   <user>jan</user>
@@ -17,7 +18,7 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-10-30</date>
+ <date>2017-11-14</date>
  <version>
   <release>2.3.0</release>
   <api>2.3.0</api>
@@ -864,7 +865,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-30</date>
+   <date>2017-11-14</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Add option to set a custom output handler.
