@@ -18,7 +18,7 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2017-11-14</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.3.0</release>
   <api>2.3.0</api>
@@ -865,7 +865,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-11-14</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Add option to set a custom output handler.
