@@ -1,6 +1,6 @@
-----------
-v2.3.0-git
-----------
+------
+v2.3.0
+------
 
 [jan] Add option to set a custom output handler.
 [jan] Add option to pass output through a pager.
