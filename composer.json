@@ -26,9 +26,9 @@
     ],
     "require": {
         "horde/horde-installer-plugin": "*",
-        "php": "^5.3 || ^7",
-        "horde/support": "^2",
-        "horde/translation": "^2.2"
+        "php": "^7",
+        "horde/support": "^3",
+        "horde/translation": "^3"
     },
     "suggest": {},
     "autoload": {
