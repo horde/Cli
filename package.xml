@@ -4,7 +4,7 @@
  <channel>pear.horde.org</channel>
  <extends>Horde_CLI</extends>
  <summary>Command line interface library</summary>
- <description>Horde_Cli:: API for basic command-line functionality/checks
+ <description>A library for basic command-line functionality and checks.
 </description>
  <lead>
   <name>Jan Schneider</name>
@@ -18,14 +18,14 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2018-01-14</date>
+ <date>2021-02-23</date>
  <version>
-  <release>2.3.1</release>
-  <api>2.3.0</api>
+  <release>3.0.0alpha1</release>
+  <api>3.0.0alpha1</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>alpha</release>
+  <api>alpha</api>
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
@@ -917,14 +917,14 @@
   </release>
   <release>
    <version>
-    <release>2.3.1</release>
-    <api>2.3.0</api>
+    <release>3.0.0alpha1</release>
+    <api>3.0.0alpha1</api>
    </version>
    <stability>
-    <release>stable</release>
-    <api>stable</api>
+    <release>alpha</release>
+    <api>alpha</api>
    </stability>
-   <date>2018-01-14</date>
+   <date>2021-02-23</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 

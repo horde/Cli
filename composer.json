@@ -1,7 +1,7 @@
 {
     "name": "horde/cli",
     "description": "Command line interface library",
-    "type": "library",
+    "type": "horde-library",
     "homepage": "https://www.horde.org/libraries/Horde_Cli",
     "license": "LGPL-2.1",
     "authors": [
@@ -16,26 +16,27 @@
             "role": "lead"
         }
     ],
-    "version": "2.3.0",
-    "time": "2018-01-14",
+    "version": "3.0.0alpha1",
+    "time": "2021-02-23",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com/"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "*",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Translation": "^2.2"
+        "horde/support": "^2",
+        "horde/translation": "^2.2"
     },
-    "replace": {
-        "pear-pear.horde.org/Horde_Cli": "2.*",
-        "pear-horde/Horde_Cli": "2.*"
-    },
+    "suggest": {},
     "autoload": {
         "psr-0": {
             "Horde_Cli": "lib/"
+        },
+        "psr-4": {
+            "Horde\\Cli\\": "src/"
         }
     }
 }
