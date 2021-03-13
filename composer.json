@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "dev",
     "name": "horde/cli",
     "description": "Command line interface library",
     "type": "library",
@@ -25,8 +26,8 @@
     ],
     "require": {
         "php": "^7",
-        "horde/support": "^3",
-        "horde/translation": "^3"
+        "horde/support": "^3 || dev-FRAMEWORK_6_0",
+        "horde/translation": "^3 || dev-FRAMEWORK_6_0"
     },
     "suggest": {},
     "autoload": {
