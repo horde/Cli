@@ -20,7 +20,7 @@
  </lead>
  <date>2021-03-13</date>
  <version>
-  <release>3.0.0alpha5</release>
+  <release>3.0.0alpha6</release>
   <api>3.0.0alpha1</api>
  </version>
  <stability>
@@ -965,6 +965,22 @@
   <release>
    <version>
     <release>3.0.0alpha5</release>
+    <api>3.0.0alpha1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2021-03-13</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [rla] Released for PHP 8.
+* |+
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0alpha6</release>
     <api>3.0.0alpha1</api>
    </version>
    <stability>
