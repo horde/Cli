@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/cli",
     "description": "Command line interface library",
     "type": "library",
@@ -17,7 +16,7 @@
             "role": "lead"
         }
     ],
-    "time": "2021-03-13",
+    "time": "2021-11-05",
     "repositories": [
         {
             "type": "composer",
@@ -26,13 +25,22 @@
     ],
     "require": {
         "php": "^7",
-        "horde/support": "^3 || dev-FRAMEWORK_6_0",
-        "horde/translation": "^3 || dev-FRAMEWORK_6_0"
+        "horde/support": "^3",
+        "horde/translation": "^3"
     },
+    "require-dev": {},
     "suggest": {},
     "autoload": {
         "psr-0": {
             "Horde_Cli": "lib/"
+        },
+        "psr-4": {
+            "Horde\\Cli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Horde\\Cli\\Test\\": "test/"
         }
     }
 }
