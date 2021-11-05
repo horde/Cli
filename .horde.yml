@@ -36,4 +36,5 @@ dependencies:
       horde/support: ^3
       horde/translation: ^3
   dev:
-    horde/test: ^3
+    composer:
+      horde/test: ^3

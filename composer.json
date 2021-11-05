@@ -29,7 +29,9 @@
         "horde/support": "^3 || dev-FRAMEWORK_6_0",
         "horde/translation": "^3 || dev-FRAMEWORK_6_0"
     },
-    "require-dev": {},
+    "require-dev": {
+        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+    },
     "suggest": {},
     "autoload": {
         "psr-0": {
