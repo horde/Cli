@@ -29,7 +29,7 @@ use Exception;
  * @license   http://www.horde.org/licenses/lgpl21 LGPL
  * @package   Cli
  */
-class Cli
+class Cli implements CliInputInterface, CliOutputInterface
 {
     /**
      * The output pipe.
