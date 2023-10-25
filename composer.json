@@ -18,20 +18,10 @@
     ],
     "version": "2.3.0",
     "time": "2018-01-14",
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.horde.org"
-        }
-    ],
     "require": {
-        "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Translation": "^2.2"
+        "php": "^5.3 || ^7"
     },
     "replace": {
-        "pear-pear.horde.org/Horde_Cli": "2.*",
-        "pear-horde/Horde_Cli": "2.*"
     },
     "autoload": {
         "psr-0": {
