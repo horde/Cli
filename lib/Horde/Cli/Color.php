@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -28,22 +29,22 @@ class Horde_Cli_Color
     /**
      * No color formatting.
      */
-    const FORMAT_NONE = 0;
+    public const FORMAT_NONE = 0;
 
     /**
      * xterm compatible color formatting.
      */
-    const FORMAT_XTERM = 1;
+    public const FORMAT_XTERM = 1;
 
     /**
      * VT100 compatible color formatting.
      */
-    const FORMAT_VT100 = 2;
+    public const FORMAT_VT100 = 2;
 
     /**
      * HTML compatible color formatting.
      */
-    const FORMAT_HTML = 3;
+    public const FORMAT_HTML = 3;
 
     /**
      * The color formatting being used.
@@ -90,15 +91,15 @@ class Horde_Cli_Color
     {
         $bold_start = $bold_end = '';
         switch ($this->_format) {
-        case self::FORMAT_XTERM:
-        case self::FORMAT_VT100:
-            $bold_start = "\x1b[1m";
-            $bold_end   = "\x1b[0m";
-            break;
-        case self::FORMAT_HTML:
-            $bold_start = '<strong>';
-            $bold_end   = '</strong>';
-            break;
+            case self::FORMAT_XTERM:
+            case self::FORMAT_VT100:
+                $bold_start = "\x1b[1m";
+                $bold_end   = "\x1b[0m";
+                break;
+            case self::FORMAT_HTML:
+                $bold_start = '<strong>';
+                $bold_end   = '</strong>';
+                break;
         }
         return $bold_start . $text . $bold_end;
     }
@@ -220,10 +221,10 @@ class Horde_Cli_Color
             $text = str_replace('</span>', '', $text);
             foreach (array_keys(array_merge($this->_foregroundColors(), $this->_backgroundColors())) as $color) {
                 $text = str_replace(
-                    array(
+                    [
                         '<span style="color:' . $color . '">',
                         '<span style="background-color:' . $color . '">',
-                    ),
+                    ],
                     '',
                     $text
                 );
@@ -248,7 +249,7 @@ class Horde_Cli_Color
      */
     protected function _foregroundColors()
     {
-        return array(
+        return [
             'bold'         => "\x1b[1m",
             'normal'       => "\x1b[39m",
             'black'        => "\x1b[30m",
@@ -267,7 +268,7 @@ class Horde_Cli_Color
             'lightmagenta' => "\x1b[1m\x1b[35m",
             'lightcyan'    => "\x1b[1m\x1b[36m",
             'white'        => "\x1b[1m\x1b[37m",
-        );
+        ];
     }
 
     /**
@@ -277,7 +278,7 @@ class Horde_Cli_Color
      */
     protected function _backgroundColors()
     {
-        return array(
+        return [
             'normal'    => "\x1b[49m",
             'black'     => "\x1b[40m",
             'red'       => "\x1b[41m",
@@ -287,6 +288,6 @@ class Horde_Cli_Color
             'magenta'   => "\x1b[45m",
             'cyan'      => "\x1b[46m",
             'lightgray' => "\x1b[47m",
-        );
+        ];
     }
 }

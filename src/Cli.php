@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -314,61 +315,61 @@ class Cli implements CliInputInterface, CliOutputInterface
         }
 
         switch ($type) {
-        case 'cli.error':
-            $this->writeln(
-                $this->_color->lightgray(
-                    $this->block(
-                        '[' . $this->_space . 'ERROR!' . $this->_space . '] '
-                            . $message,
-                        'red'
+            case 'cli.error':
+                $this->writeln(
+                    $this->_color->lightgray(
+                        $this->block(
+                            '[' . $this->_space . 'ERROR!' . $this->_space . '] '
+                                . $message,
+                            'red'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.warning':
-            $this->writeln(
-                $this->_color->black(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . 'WARN'
-                            . $this->_space . $this->_space . '] '
-                            . $message,
-                        'brown'
+            case 'cli.warning':
+                $this->writeln(
+                    $this->_color->black(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . 'WARN'
+                                . $this->_space . $this->_space . '] '
+                                . $message,
+                            'brown'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.success':
-            $this->writeln(
-                $this->_color->black(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . $this->_space
-                            . 'OK' . $this->_space . $this->_space
-                            . $this->_space . '] '
-                            . $message,
-                        'green'
+            case 'cli.success':
+                $this->writeln(
+                    $this->_color->black(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . $this->_space
+                                . 'OK' . $this->_space . $this->_space
+                                . $this->_space . '] '
+                                . $message,
+                            'green'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.message':
-            $this->writeln(
-                $this->_color->lightgray(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . 'INFO'
-                            . $this->_space . $this->_space . '] '
-                            . $message,
-                        'blue'
+            case 'cli.message':
+                $this->writeln(
+                    $this->_color->lightgray(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . 'INFO'
+                                . $this->_space . $this->_space . '] '
+                                . $message,
+                            'blue'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        default:
-            $this->writeln($message);
-            break;
+            default:
+                $this->writeln($message);
+                break;
         }
     }
 
@@ -380,8 +381,8 @@ class Cli implements CliInputInterface, CliOutputInterface
      */
     public function fatal($error)
     {
-        if ($error instanceof Throwable ||
-            $error instanceof Exception) {
+        if ($error instanceof Throwable
+            || $error instanceof Exception) {
             $trace = $error;
         } else {
             $trace = debug_backtrace();
@@ -400,8 +401,8 @@ class Cli implements CliInputInterface, CliOutputInterface
         $location = '';
         if (is_object($error) && method_exists($error, 'getMessage')) {
             $first = $error;
-            while (method_exists($first, 'getPrevious') &&
-                   $previous = $first->getPrevious()) {
+            while (method_exists($first, 'getPrevious')
+                   && $previous = $first->getPrevious()) {
                 $first = $previous;
             }
             $file = method_exists($first, 'getFile') ? $first->getFile() : null;
@@ -428,7 +429,7 @@ class Cli implements CliInputInterface, CliOutputInterface
             $lines = $this->_addLines($lines, $location);
         }
         $lines = $this->_addLines($lines, '');
-        $lines = $this->_addLines($lines, (string)$backtrace);
+        $lines = $this->_addLines($lines, (string) $backtrace);
         $lines = $this->_addLines($lines, '');
         $this->writeln(
             $this->_color->lightgray(
@@ -672,9 +673,9 @@ class Cli implements CliInputInterface, CliOutputInterface
      */
     public static function runningFromCLI()
     {
-        return (PHP_SAPI == 'cli') ||
-               (((PHP_SAPI == 'cgi') || (PHP_SAPI == 'cgi-fcgi')) &&
-                empty($_SERVER['SERVER_NAME']));
+        return (PHP_SAPI == 'cli')
+               || (((PHP_SAPI == 'cgi') || (PHP_SAPI == 'cgi-fcgi'))
+                && empty($_SERVER['SERVER_NAME']));
     }
 
     /**
@@ -684,10 +685,10 @@ class Cli implements CliInputInterface, CliOutputInterface
      */
     public function shutdown()
     {
-        if ((function_exists('session_status') &&
-             session_status() == PHP_SESSION_ACTIVE) ||
-            (!function_exists('session_status') &&
-             session_id())) {
+        if ((function_exists('session_status')
+             && session_status() == PHP_SESSION_ACTIVE)
+            || (!function_exists('session_status')
+             && session_id())) {
             session_destroy();
         }
     }

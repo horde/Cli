@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -92,15 +93,15 @@ class Color
     {
         $bold_start = $bold_end = '';
         switch ($this->_format) {
-        case self::FORMAT_XTERM:
-        case self::FORMAT_VT100:
-            $bold_start = "\x1b[1m";
-            $bold_end   = "\x1b[0m";
-            break;
-        case self::FORMAT_HTML:
-            $bold_start = '<strong>';
-            $bold_end   = '</strong>';
-            break;
+            case self::FORMAT_XTERM:
+            case self::FORMAT_VT100:
+                $bold_start = "\x1b[1m";
+                $bold_end   = "\x1b[0m";
+                break;
+            case self::FORMAT_HTML:
+                $bold_start = '<strong>';
+                $bold_end   = '</strong>';
+                break;
         }
         return $bold_start . $text . $bold_end;
     }

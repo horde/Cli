@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -86,7 +87,7 @@ class Horde_Cli
      *                     - 'pager': (boolean) Pipe output through a pager?
      *                                @since 2.3.0
      */
-    public function __construct(array $opts = array())
+    public function __construct(array $opts = [])
     {
         $this->_color = new Horde_Cli_Color();
         $console = $this->runningFromCLI();
@@ -118,7 +119,7 @@ class Horde_Cli
         // We really want to call this at the end of the script, not in the
         // destructor.
         if ($console) {
-            register_shutdown_function(array($this, 'shutdown'));
+            register_shutdown_function([$this, 'shutdown']);
         }
     }
 
@@ -307,61 +308,61 @@ class Horde_Cli
         }
 
         switch ($type) {
-        case 'cli.error':
-            $this->writeln(
-                $this->_color->lightgray(
-                    $this->block(
-                        '[' . $this->_space . 'ERROR!' . $this->_space . '] '
-                            . $message,
-                        'red'
+            case 'cli.error':
+                $this->writeln(
+                    $this->_color->lightgray(
+                        $this->block(
+                            '[' . $this->_space . 'ERROR!' . $this->_space . '] '
+                                . $message,
+                            'red'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.warning':
-            $this->writeln(
-                $this->_color->black(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . 'WARN'
-                            . $this->_space . $this->_space . '] '
-                            . $message,
-                        'brown'
+            case 'cli.warning':
+                $this->writeln(
+                    $this->_color->black(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . 'WARN'
+                                . $this->_space . $this->_space . '] '
+                                . $message,
+                            'brown'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.success':
-            $this->writeln(
-                $this->_color->black(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . $this->_space
-                            . 'OK' . $this->_space . $this->_space
-                            . $this->_space . '] '
-                            . $message,
-                        'green'
+            case 'cli.success':
+                $this->writeln(
+                    $this->_color->black(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . $this->_space
+                                . 'OK' . $this->_space . $this->_space
+                                . $this->_space . '] '
+                                . $message,
+                            'green'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        case 'cli.message':
-            $this->writeln(
-                $this->_color->lightgray(
-                    $this->block(
-                        '[' . $this->_space . $this->_space . 'INFO'
-                            . $this->_space . $this->_space . '] '
-                            . $message,
-                        'blue'
+            case 'cli.message':
+                $this->writeln(
+                    $this->_color->lightgray(
+                        $this->block(
+                            '[' . $this->_space . $this->_space . 'INFO'
+                                . $this->_space . $this->_space . '] '
+                                . $message,
+                            'blue'
+                        )
                     )
-                )
-            );
-            break;
+                );
+                break;
 
-        default:
-            $this->writeln($message);
-            break;
+            default:
+                $this->writeln($message);
+                break;
         }
     }
 
@@ -373,8 +374,8 @@ class Horde_Cli
      */
     public function fatal($error)
     {
-        if ($error instanceof Throwable ||
-            $error instanceof Exception) {
+        if ($error instanceof Throwable
+            || $error instanceof Exception) {
             $trace = $error;
         } else {
             $trace = debug_backtrace();
@@ -393,8 +394,8 @@ class Horde_Cli
         $location = '';
         if (is_object($error) && method_exists($error, 'getMessage')) {
             $first = $error;
-            while (method_exists($first, 'getPrevious') &&
-                   $previous = $first->getPrevious()) {
+            while (method_exists($first, 'getPrevious')
+                   && $previous = $first->getPrevious()) {
                 $first = $previous;
             }
             $file = method_exists($first, 'getFile') ? $first->getFile() : null;
@@ -408,9 +409,10 @@ class Horde_Cli
             $error = $error->getMessage();
         }
 
-        $lines = array('');
+        $lines = [''];
         $lines = $this->_addLines(
-            $lines, Horde_Cli_Translation::t("Fatal Error:")
+            $lines,
+            Horde_Cli_Translation::t("Fatal Error:")
         );
         $lines = $this->_addLines($lines, $error);
         if ($details) {
@@ -420,7 +422,7 @@ class Horde_Cli
             $lines = $this->_addLines($lines, $location);
         }
         $lines = $this->_addLines($lines, '');
-        $lines = $this->_addLines($lines, (string)$backtrace);
+        $lines = $this->_addLines($lines, (string) $backtrace);
         $lines = $this->_addLines($lines, '');
         $this->writeln(
             $this->_color->lightgray(
@@ -620,7 +622,7 @@ class Horde_Cli
      *
      * @return Horde_Cli  A Horde_Cli instance.
      */
-    public static function init(array $opts = array())
+    public static function init(array $opts = [])
     {
         /* Run constructor now because it requires $_SERVER['SERVER_NAME'] to
          * be empty if called with a CGI SAPI. */
@@ -629,7 +631,7 @@ class Horde_Cli
         @set_time_limit(0);
         ob_implicit_flush(true);
         ini_set('html_errors', false);
-        set_exception_handler(array($cli, 'fatal'));
+        set_exception_handler([$cli, 'fatal']);
         if (!isset($_SERVER['HTTP_HOST'])) {
             $_SERVER['HTTP_HOST'] = '127.0.0.1';
         }
@@ -664,9 +666,9 @@ class Horde_Cli
      */
     public static function runningFromCLI()
     {
-        return (PHP_SAPI == 'cli') ||
-               (((PHP_SAPI == 'cgi') || (PHP_SAPI == 'cgi-fcgi')) &&
-                empty($_SERVER['SERVER_NAME']));
+        return (PHP_SAPI == 'cli')
+               || (((PHP_SAPI == 'cgi') || (PHP_SAPI == 'cgi-fcgi'))
+                && empty($_SERVER['SERVER_NAME']));
     }
 
     /**
@@ -676,10 +678,10 @@ class Horde_Cli
      */
     public function shutdown()
     {
-        if ((function_exists('session_status') &&
-             session_status() == PHP_SESSION_ACTIVE) ||
-            (!function_exists('session_status') &&
-             session_id())) {
+        if ((function_exists('session_status')
+             && session_status() == PHP_SESSION_ACTIVE)
+            || (!function_exists('session_status')
+             && session_id())) {
             session_destroy();
         }
     }
@@ -712,17 +714,17 @@ class Horde_Cli
     {
         $paths = array_unique(array_merge(
             explode(':', getenv('PATH')),
-            array(
+            [
                 '/usr/local/sbin',
                 '/usr/local/bin',
                 '/usr/sbin',
                 '/usr/bin',
                 '/sbin',
-                '/bin'
-            )
+                '/bin',
+            ]
         ));
         $pager = null;
-        foreach (array('less', 'more') as $cmd) {
+        foreach (['less', 'more'] as $cmd) {
             foreach ($paths as $path) {
                 if (is_executable($path . '/' . $cmd)) {
                     $pager = $path . '/' . $cmd;
@@ -737,7 +739,7 @@ class Horde_Cli
         if (!$help) {
             return;
         }
-        foreach (array('--RAW-CONTROL-CHARS', '--raw-control-chars') as $opt) {
+        foreach (['--RAW-CONTROL-CHARS', '--raw-control-chars'] as $opt) {
             if (strpos($help, $opt)) {
                 $pager .= ' ' . $opt;
                 break;
