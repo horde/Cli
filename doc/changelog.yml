@@ -2,6 +2,22 @@
 3.0.0alpha6:
   notes: |
     test change
+3.0.0-beta1:
+  api: 3.0.0-beta1
+  state:
+    release: beta
+    api: beta
+  date: 2026-03-15
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    chore: horde-components qc --fix run
+    chore: Update version strings to regular format
+    Add IO resource wrappers and distinct input/output interfaces
+    Update metadata and workflows for PHP 8 support
+    Forgot dev dependency on Horde_Test
+    Development mode for Cli-3.0.0alpha6
 3.0.0-alpha6:
   api: 3.0.0alpha1
   state:
