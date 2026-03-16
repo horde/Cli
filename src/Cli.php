@@ -760,4 +760,52 @@ class Cli implements CliInputInterface, CliOutputInterface
         }
         $this->_output = popen($pager, 'w');
     }
+
+    /**
+     * The presentation layer instance.
+     */
+    private ?Output\Presenter $presenter = null;
+
+    /**
+     * Get presentation layer instance.
+     *
+     * Creates a presenter based on environment detection (CI, Unicode support)
+     * or explicit format selection. The presenter provides modern CLI output
+     * with semantic categories, emoji symbols, and GitHub Actions integration.
+     *
+     * Example usage:
+     *   $cli = new Cli();
+     *   $presenter = $cli->getPresenter();
+     *   $presenter->ok('Task completed successfully!');
+     *   $presenter->semantic('created', 'Generated report.pdf');
+     *
+     * @param array $options Options for presenter creation
+     *   - 'cli_format': Explicit format ('classic', 'ci', 'unicode', 'autodetect')
+     *   - 'nocolor': Disable colors
+     *
+     * @return Output\Presenter The presentation layer instance
+     *
+     * @since Horde_Cli 3.1.0
+     */
+    public function getPresenter(array $options = []): Output\Presenter
+    {
+        if ($this->presenter === null) {
+            $this->presenter = Output\PresenterFactory::create($this, $options);
+        }
+        return $this->presenter;
+    }
+
+    /**
+     * Set custom presenter instance.
+     *
+     * Useful for testing or providing custom presentation logic.
+     *
+     * @param Output\Presenter $presenter The presenter instance
+     *
+     * @since Horde_Cli 3.1.0
+     */
+    public function setPresenter(Output\Presenter $presenter): void
+    {
+        $this->presenter = $presenter;
+    }
 }
