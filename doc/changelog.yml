@@ -2,6 +2,18 @@
 3.0.0alpha6:
   notes: |
     test change
+3.0.0-beta2:
+  api: 3.0.0-beta2
+  state:
+    release: beta
+    api: beta
+  date: 2026-03-23
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    doc: Add PRESENTATION.md and php examples for presenter
+    feat: Port unicode and github markup presentation layers from components tool
 3.0.0-beta1:
   api: 3.0.0-beta1
   state:
