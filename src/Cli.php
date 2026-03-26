@@ -155,6 +155,13 @@ class Cli implements CliInputInterface, CliOutputInterface
     {
         if ($pre) {
             fwrite($this->_output, $this->_newline . $text);
+            // When $pre is true, there's no trailing newline, so we must flush
+            // to ensure the text is visible (used by prompt())
+            if (ob_get_level() > 0) {
+                ob_flush();
+            }
+            flush();
+            fflush($this->_output);
         } else {
             fwrite($this->_output, $text . $this->_newline);
         }
@@ -517,8 +524,8 @@ class Cli implements CliInputInterface, CliOutputInterface
                 $prompt = wordwrap($prompt, $width);
             }
             $this->writeln($prompt . ' ', true);
-            // Flush both PHP's output buffer and system stdout to ensure prompt is visible
-            // ob_flush() flushes PHP's internal buffer, flush() flushes system buffers
+            // writeln() with $pre=true already flushed the file handle
+            // Flush remaining buffers to ensure prompt is immediately visible
             if (ob_get_level() > 0) {
                 ob_flush();
             }
@@ -548,8 +555,8 @@ class Cli implements CliInputInterface, CliOutputInterface
                 $question .= ' [' . $default . ']';
             }
             $this->writeln($question . ': ', true);
-            // Flush both PHP's output buffer and system stdout to ensure prompt is visible
-            // ob_flush() flushes PHP's internal buffer, flush() flushes system buffers
+            // writeln() with $pre=true already flushed the file handle
+            // Flush remaining buffers to ensure prompt is immediately visible
             if (ob_get_level() > 0) {
                 ob_flush();
             }
