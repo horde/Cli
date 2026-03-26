@@ -16,16 +16,14 @@
             "role": "lead"
         }
     ],
-    "time": "2026-03-23",
+    "time": "2026-03-26",
     "repositories": [],
     "require": {
-        "php": "^7.4 || ^8",
+        "php": "^8.1",
         "horde/support": "^3 || dev-FRAMEWORK_6_0",
         "horde/translation": "^3 || dev-FRAMEWORK_6_0"
     },
-    "require-dev": {
-        "horde/test": "^3 || dev-FRAMEWORK_6_0"
-    },
+    "require-dev": {},
     "suggest": {},
     "autoload": {
         "psr-0": {
