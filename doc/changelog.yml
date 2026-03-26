@@ -2,6 +2,17 @@
 3.0.0alpha6:
   notes: |
     test change
+3.0.0-beta4:
+  api: 3.0.0-beta4
+  state:
+    release: beta
+    api: beta
+  date: 2026-03-26
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    fix: flushing
 3.0.0-beta3:
   api: 3.0.0-beta3
   state:
