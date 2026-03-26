@@ -517,7 +517,12 @@ class Cli implements CliInputInterface, CliOutputInterface
                 $prompt = wordwrap($prompt, $width);
             }
             $this->writeln($prompt . ' ', true);
-            @ob_flush();
+            // Flush both PHP's output buffer and system stdout to ensure prompt is visible
+            // ob_flush() flushes PHP's internal buffer, flush() flushes system buffers
+            if (ob_get_level() > 0) {
+                ob_flush();
+            }
+            flush();
             $response = trim(fgets(STDIN));
             if ($response === '' && $default !== null) {
                 $response = $default;
@@ -543,7 +548,12 @@ class Cli implements CliInputInterface, CliOutputInterface
                 $question .= ' [' . $default . ']';
             }
             $this->writeln($question . ': ', true);
-            @ob_flush();
+            // Flush both PHP's output buffer and system stdout to ensure prompt is visible
+            // ob_flush() flushes PHP's internal buffer, flush() flushes system buffers
+            if (ob_get_level() > 0) {
+                ob_flush();
+            }
+            flush();
 
             // Get the user choice.
             $response = trim(fgets(STDIN));

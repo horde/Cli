@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 namespace Horde\Cli\Test\Unit\Output\Presenter;
 
+use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\TestCase;
 use Horde\Cli\Output\Presenter\Unicode;
 use Horde_Cli;
@@ -27,8 +28,8 @@ use Horde_Cli;
  * @package  Cli
  * @author   Ralf Lang <ralf.lang@ralf-lang.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
- * @coversNothing
  */
+#[CoversNothing]
 class UnicodeTest extends TestCase
 {
     private $cli;
