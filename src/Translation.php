@@ -14,7 +14,7 @@
 
 namespace Horde\Cli;
 
-use Horde_Translation_Autodetect;
+use Horde\Translation\Autodetect;
 
 /**
  * Horde_Cli_Translation is the translation wrapper class for Horde_Cli.
@@ -25,19 +25,19 @@ use Horde_Translation_Autodetect;
  * @license   http://www.horde.org/licenses/lgpl21 LGPL
  * @package   Cli
  */
-class Translation extends Horde_Translation_Autodetect
+class Translation extends Autodetect
 {
     /**
      * The translation domain
      *
      * @var string
      */
-    protected static $_domain = 'Horde_Cli';
+    protected static string $domain = 'Horde_Cli';
 
     /**
      * The absolute PEAR path to the translations for the default gettext handler.
      *
      * @var string
      */
-    protected static $_pearDirectory = '@data_dir@';
+    protected static string $pearDirectory = '@data_dir@';
 }
