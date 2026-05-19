@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * A basic testcase for CLI
  *
- * @author   Ralf Lang <lang@b1-systems.de>
+ * @author   Ralf Lang <ralf.lang@ralf-lang.de>
  * @category Horde
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package  Cache
