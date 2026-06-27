@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 /**
  * Quick test script to verify presenter integration.
  */
@@ -25,7 +26,7 @@ $presenter->plain('');
 
 // Test with modern Horde\Cli\Cli
 echo "=== Testing Modern Horde\\Cli\\Cli ===\n";
-$modernCli = new \Horde\Cli\Cli();
+$modernCli = new Horde\Cli\Cli();
 $modernPresenter = $modernCli->getPresenter(['cli_format' => 'unicode']);
 
 $modernPresenter->ok('Success message');

@@ -785,7 +785,7 @@ class Horde_Cli
     public function getPresenter(array $options = [])
     {
         if ($this->presenter === null) {
-            $this->presenter = \Horde\Cli\Output\PresenterFactory::create($this, $options);
+            $this->presenter = Horde\Cli\Output\PresenterFactory::create($this, $options);
         }
         return $this->presenter;
     }
@@ -799,7 +799,7 @@ class Horde_Cli
      *
      * @since Horde_Cli 3.1.0
      */
-    public function setPresenter(\Horde\Cli\Output\Presenter $presenter)
+    public function setPresenter(Horde\Cli\Output\Presenter $presenter)
     {
         $this->presenter = $presenter;
     }
